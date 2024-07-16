@@ -19,7 +19,7 @@ public interface EmployeeService {
      * 新增员工
      * @param employeeDTO
      */
-    void save(EmployeeDTO employeeDTO);
+    void addEmployee(EmployeeDTO employeeDTO);
 
     /**
      * 分页查询
@@ -27,4 +27,11 @@ public interface EmployeeService {
      * @return
      */
     PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    /**
+     * 设置账号状态
+     * @param status
+     * @param id
+     */
+    void setAccountStatus(Integer status, Long id);
 }

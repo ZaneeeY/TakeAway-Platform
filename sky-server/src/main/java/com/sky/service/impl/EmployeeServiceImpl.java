@@ -72,7 +72,7 @@ public class EmployeeServiceImpl implements EmployeeService {
      * 新增员工
      * @param employeeDTO
      */
-    public void save(EmployeeDTO employeeDTO) {
+    public void addEmployee(EmployeeDTO employeeDTO) {
          Employee employee = new Employee();
 
         //对象属性拷贝
@@ -110,6 +110,16 @@ public class EmployeeServiceImpl implements EmployeeService {
         List<Employee> records = page.getResult();
 
         return new PageResult(total, records);
+    }
+
+    /**
+     * 设置账号状态
+     * @param status
+     * @param id
+     */
+    public void setAccountStatus(Integer status, Long id) {
+        Employee employee = Employee.builder().id(id).status(status).build();
+        employeeMapper.updateByCondition(employee);
     }
 
 }
