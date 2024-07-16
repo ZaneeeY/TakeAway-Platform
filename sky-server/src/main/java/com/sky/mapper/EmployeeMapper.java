@@ -39,4 +39,14 @@ public interface EmployeeMapper {
      * @param employee
      */
     void updateByCondition(Employee employee);
+
+    /**
+     * 根据id查找员工
+     * @param id
+     * @return
+     */
+    @Select("select * from employee where id = #{id}")
+    Employee getById(String id);
+
+
 }
