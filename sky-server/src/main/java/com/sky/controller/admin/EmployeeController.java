@@ -114,7 +114,7 @@ public class EmployeeController {
     }
 
     /**
-     * 根据ID查询员工
+     * 根据ID查询员工信息
      * @param id
      * @return
      */
